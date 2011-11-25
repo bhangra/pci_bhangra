@@ -1,0 +1,106 @@
+################################################################################
+#
+# File:   xc2s200fg456_32_33.ucf (PCI edge: left CLK edge: up)
+# Rev:    3.0.0
+#
+# Use this file only with the device listed below.  Any
+# other combination is invalid.  Do not modify this file
+# except in regions designated for "user" constraints.
+# This file is valid only with the default input delay
+# buffer settings as described in the implementation guide.
+#
+# Copyright (c) 2003 Xilinx, Inc.  All rights reserved.
+#
+# The UCF file information provided by Xilinx is provided
+# solely for your convenience.  Xilinx makes no warranties,
+# and accepts no liability, with respect to such information
+# or its use, and any use thereof is solely at the risk of
+# the user.  In addition, Xilinx does not assume any liability
+# arising out of such use; nor does it convey any license under
+# its patents, copyrights, maskwork, or any rights of others.
+#
+################################################################################
+# Define Device, Package, And Speed Grade
+################################################################################
+#
+CONFIG PART = XC2S200-FG456-6 ;
+#
+################################################################################
+# Avoid Configuration Pins
+################################################################################
+#
+CONFIG PROHIBIT = "A20" ;   #IO_WRITE
+CONFIG PROHIBIT = "C19" ;   #IO_CS
+CONFIG PROHIBIT = "C21" ;   #IO_DOUT_BUSY
+CONFIG PROHIBIT = "D20" ;   #IO_DIN_D0
+CONFIG PROHIBIT = "H22" ;   #IO_D1
+CONFIG PROHIBIT = "H20" ;   #IO_D2
+CONFIG PROHIBIT = "K20" ;   #IO_D3
+CONFIG PROHIBIT = "N22" ;   #IO_D4
+CONFIG PROHIBIT = "R21" ;   #IO_D5
+CONFIG PROHIBIT = "T22" ;   #IO_D6
+CONFIG PROHIBIT = "Y21" ;   #IO_D7
+CONFIG PROHIBIT = "V19" ;   #IO_INIT
+#
+################################################################################
+# PCI I/O Assignment
+################################################################################
+#
+# System Signal
+NET	"PCI_CLK"	LOC = "C11"	;
+NET "RST"		LOC = "E2"	;
+
+# Address/Data
+NET "PAR"		LOC = "P2"	; #Parity
+NET "CBE<3>"	LOC = "N2"	; #bus Command Byte Enable
+NET "CBE<2>"	LOC = "N3"	;
+NET "CBE<1>"	LOC = "N4"	;
+NET "CBE<0>"	LOC = "P1"	;
+NET "AD<31>"	LOC = "E1"	; #Address Data bus
+NET "AD<30>"	LOC = "G4"	;
+NET "AD<29>"	LOC = "G3"	;
+NET "AD<28>"	LOC = "H5"	;
+NET "AD<27>"	LOC = "F2"	;
+NET "AD<26>"	LOC = "F1"	;
+NET "AD<25>"	LOC = "H4"	;
+NET "AD<24>"	LOC = "G1"	;
+NET "AD<23>"	LOC = "H3"	;
+NET "AD<22>"	LOC = "H2"	;
+NET "AD<21>"	LOC = "J4"	;
+NET "AD<20>"	LOC = "H1"	;
+NET "AD<19>"	LOC = "J5"	;
+NET "AD<18>"	LOC = "J2"	;
+NET "AD<17>"	LOC = "J3"	;
+NET "AD<16>"	LOC = "J1"	;
+NET "AD<15>"	LOC = "K5"	;
+NET "AD<14>"	LOC = "K1"	;
+NET "AD<13>"	LOC = "K3"	;
+NET "AD<12>"	LOC = "K4"	;
+NET	"AD<11>"	LOC = "P4"	;
+NET "AD<10>"	LOC = "R1"	;
+NET "AD<9>"		LOC = "P5"	;
+NET "AD<8>"		LOC = "P3"	;
+NET "AD<7>"		LOC = "R2"	;
+NET "AD<6>"		LOC = "T1"	;
+NET "AD<5>"		LOC = "R4"	;
+NET "AD<4>"		LOC = "T2"	;
+NET "AD<3>"		LOC = "U1"	;
+NET "AD<2>"		LOC = "R5"	;
+NET "AD<1>"		LOC = "V1"	;
+NET "AD<0>"		LOC = "T5"	;
+
+#PCI Bus Control Signal
+NET "FRAME"		LOC = "M6"	;
+NET "IRDY"		LOC = "L3"	;
+NET "TRDY"		LOC = "M1"	;
+NET "DEVSEL"	LOC = "L1"	;
+NET "STOP"		LOC = "L4"	;
+NET "IDSEL"		LOC = "L6"	;
+
+#Interrupt Signal
+NET "INTA"		LOC = "M3"	;
+
+#Error Report Signal
+NET "PERR"		LOC = "N5"	;
+NET "SERR"		LOC = "M4"	;
+
